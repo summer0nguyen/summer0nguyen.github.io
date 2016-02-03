@@ -29,6 +29,7 @@ I will usually write about the tasks, technologies I used at my company in some 
 + Architecture Design for some systems : CDN, Web Farm, CDN
 + Tunnings for kernel, web servers, database servers,...
 + Cloud Infrastructure : CloudStack
++ Automate system deployment using Puppet, Ansible, ...
 
 **Big Data**
 
