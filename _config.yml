@@ -66,5 +66,23 @@ kramdown:
 gems:
 - jemoji
 - jekyll-paginate
-- pygments
+- rouge
 
+############
+# Timeline #
+############
+
+events:
+  - image: "/images/timeline/ttvonline.jpg"
+    date: "July 2015 - Today"
+    description: "Senior System Engineer - Team Lead"
+  - image: "/images/timeline/vng.gif"
+    date: "September 2012 - July 2015"
+    description: "System Engineer"
+  - image: "/images/timeline/developer.jpg"
+    date: "December 2011 - September 2012"
+    description: "Developer of : Perl, PHP, JAVA"
+  - image: "/images/timeline/hcmut.png"
+    date: "September 2007 - April 2012"
+    description: "Bachelor of Engineering - Computer Science & Engineering -    Ho Chi Minh University of Technology"
+timeline-img: "/images/timeline/default.png"

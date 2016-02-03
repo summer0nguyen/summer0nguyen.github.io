@@ -20,7 +20,7 @@ I will usually write about the tasks, technologies I used at my company in some 
 
 + Linux basic and useful commands
 + Tutorial how to use some common softwares : git, gitlab, jenkins, DNS management, .. 
-+ Debugging , fixxing some problem I got. 
++ Debugging , fixxing some problems I got. 
 
 
 
@@ -28,7 +28,7 @@ I will usually write about the tasks, technologies I used at my company in some 
 
 + Architecture Design for some systems : CDN, Web Farm, CDN
 + Tunnings for kernel, web servers, database servers,...
-
++ Cloud Infrastructure : CloudStack
 
 **Big Data**
 
