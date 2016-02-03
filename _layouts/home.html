@@ -43,7 +43,10 @@
 
 <main class="notepad-content" role="main">
 
-            {{ content }}
+<div class="row" style="max-width:none !important">
+<div class="medium-9 columns"> {{ content }}</div>
+<div class="medium-3 columns"> {% include right.html %}</div>
+</div>
 </main>
     {% include footer.html %}
 
