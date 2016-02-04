@@ -10,11 +10,18 @@ tags:
 - automation
 ---
 
+---
+**Previous Topic** : <a href="/puppet/2016/02/03/puppet-automation-series-part-1-introduction/">PUPPET AUTOMATION SERIES - PART 1 - INTRODUCTION</a>
+
+**Next Topic** : <a href="/puppet/2016/02/04/puppet-automation-series-part-3-installation/">PUPPET AUTOMATION SERIES - PART 3 - INSTALLATION</a>
+
+---
+
 ***Puppet Version***
 
 There are 2 versions of Puppet: (From: <a href="https://puppetlabs.com/puppet/puppet-open-source">https://puppetlabs.com/puppet/puppet-open-source</a>)
 
-* *Puppet OpenSouce*: Open Source Puppet is a declarative, model-based configuration management solution that lets you define the state of your IT infrastructure, using the Puppet language. Open Source Puppet then automatically enforces the correct configuration to ensure the right services are up and running, on the right platforms.
+* *Puppet Open Source*: Open Source Puppet is a declarative, model-based configuration management solution that lets you define the state of your IT infrastructure, using the Puppet language. Open Source Puppet then automatically enforces the correct configuration to ensure the right services are up and running, on the right platforms.
 * *Puppet Enterprise* : **Puppet Open Souce** +  commercial-only enhancements, supported modules and integrations. 
 
 
@@ -81,3 +88,9 @@ And how the whole system works :
 
 
 Hope you can understand how it works. 
+
+
+---
+**Previous Topic** : <a href="/puppet/2016/02/03/puppet-automation-series-part-1-introduction/">PUPPET AUTOMATION SERIES - PART 1 - INTRODUCTION</a>
+
+**Next Topic** : <a href="/puppet/2016/02/04/puppet-automation-series-part-3-installation/">PUPPET AUTOMATION SERIES - PART 3 - INSTALLATION</a>
