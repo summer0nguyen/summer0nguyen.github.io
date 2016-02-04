@@ -2,7 +2,7 @@
 author: Summer Nguyen
 layout: post
 title: "Puppet Automation Series - Part 2 - Architecture"
-date: 2016-02-03 17:30
+date: 2016-02-04 10:30
 comments: true
 category: puppet
 tags:
