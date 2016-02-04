@@ -10,10 +10,6 @@ tags:
 - automation
 ---
 
----
-**Previous Topic** : <a href="/puppet/2016/02/04/puppet-automation-series-part-2-architecture/">PUPPET AUTOMATION SERIES - PART 2 - ARCHITECTURE</a>
-
----
 
 In this LAB, I have 2 servers hosted in my own laptop's VirtualBox :
 

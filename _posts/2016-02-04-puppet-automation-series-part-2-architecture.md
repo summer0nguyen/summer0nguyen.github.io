@@ -10,12 +10,7 @@ tags:
 - automation
 ---
 
----
-**Previous Topic** : <a href="/puppet/2016/02/03/puppet-automation-series-part-1-introduction/">PUPPET AUTOMATION SERIES - PART 1 - INTRODUCTION</a>
 
-**Next Topic** : <a href="/puppet/2016/02/04/puppet-automation-series-part-3-installation/">PUPPET AUTOMATION SERIES - PART 3 - INSTALLATION</a>
-
----
 
 ***Puppet Version***
 
