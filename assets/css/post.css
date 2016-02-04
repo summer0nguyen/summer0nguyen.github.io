@@ -422,7 +422,7 @@ html, body, .notepad-post-container, .notepad-post-header {
     @media only screen and (min-width: 90em) {
       .notepad-page-title h1,
       .notepad-post-title-simple h1 {
-        font-size: 5.3125rem;
+        font-size: 3rem;
         padding-top: 8.125rem;
         padding-bottom: 8.125rem; } }
   .notepad-page-title .notepad-post-meta-simple,
@@ -449,8 +449,8 @@ html, body, .notepad-post-container, .notepad-post-header {
     @media only screen and (min-width: 90em) {
       .notepad-page-title .notepad-post-meta-simple,
       .notepad-post-title-simple .notepad-post-meta-simple {
-        padding-top: 10rem;
-        padding-bottom: 6.25rem; } }
+        padding-top: 5rem;
+        padding-bottom: 3rem; } }
 
 /* Page conent */
 .notepad-page-content {

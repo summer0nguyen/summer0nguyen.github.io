@@ -259,7 +259,7 @@ main, .notepad-share-icons, .notepad-disqus {
   @media only screen and (min-width: 40.063em) {
     .notepad-content .notepad-index-post .notepad-post-header .notepad-post-title {
       text-align: left;
-      font-size: 2.125rem;
+      font-size: 1.5rem;
       margin-bottom: 0.9375rem; } }
   .notepad-content .notepad-index-post .notepad-post-excerpt {
     color: black;
@@ -268,7 +268,7 @@ main, .notepad-share-icons, .notepad-disqus {
     text-align: center; }
     .notepad-content .notepad-index-post .notepad-post-excerpt p {
       margin: 0;
-      font-size: 1.25rem; }
+      font-size: 1rem; }
   @media only screen and (min-width: 40.063em) {
     .notepad-content .notepad-index-post .notepad-post-excerpt {
       text-align: left; } }
