@@ -11,7 +11,7 @@ tags:
 ---
 
 
-"Puppet is an amazingly powerful and flexible tool. It's one that can change your daily work flow for the better once you start using it, but like all open ended tools, it can take a little while to become familiar with." - <a href="http://www.puppetcookbook.com/" >Puppet Cookbook</a>
+"Puppet is an amazingly powerful and flexible tool. It's one that can change your daily workflow for the better once you start using it, but like all open ended tools, it can take a little while to become familiar with." - <a href="http://www.puppetcookbook.com/" >Puppet Cookbook</a>
 
 
 ***About the history***
@@ -62,3 +62,5 @@ As there are many documents using Puppet on the internet, I won't dig into Puppe
 
 
 Hope you will love this series. Please feel free to feedback to my posts.  Thank you.
+
+Next Topic : <a href="http://summernguyen.net/puppet/2016/02/04/puppet-automation-series-part-2-architecture/">PUPPET AUTOMATION SERIES - PART 2 - ARCHITECTURE</a>
