@@ -58,7 +58,7 @@ It will install puppet master and all it's dependencies .
 
 *Configuring the Master with config file /etc/puppet/puppet.conf*
 
-{% highlight apacheconf %}
+{% highlight conf %}
 [main]
     # The Puppet log directory.
     # The default value is '$vardir/log'.
@@ -132,7 +132,7 @@ yum install puppet -y
 It will install puppet agent and all it's dependencies . 
 
 *Configuring the Agent with config file /etc/puppet/puppet.conf*
-{% highlight apacheconf %}
+{% highlight conf %}
 [main]
     # The Puppet log directory.
     # The default value is '$vardir/log'.
@@ -190,3 +190,5 @@ That's how to setup for Puppet Agent to connect to Puppet Master .
 
 ---
 **Previous Topic** :<a href="/puppet/2016/02/04/puppet-automation-series-part-2-architecture/">PUPPET AUTOMATION SERIES - PART 2 - ARCHITECTURE</a>
+
+**Next Topic** : <a href="/puppet/2016/02/15/puppet-automation-series-part-4-beginners-configuration-guide/">PUPPET AUTOMATION SERIES - PART 4 - BEGINNERS CONFIGURATION GUIDE</a>
