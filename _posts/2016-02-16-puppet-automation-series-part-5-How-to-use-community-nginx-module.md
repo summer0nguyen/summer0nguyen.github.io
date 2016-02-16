@@ -2,7 +2,7 @@
 author: Summer Nguyen
 layout: post
 title: "Puppet Automation Series - Part 5 - How to use community Module : Nginx"
-date: 2016-02-15 12:00
+date: 2016-02-16 12:00
 comments: true
 category: puppet
 tags:
