@@ -88,7 +88,7 @@ And Puppet master will compile our code to catalog and send it to the nodes. Tha
 
 
 
-**Relationships and Ordering**
+<a name="puppet_relationship_and_ordering" href="#puppet_relationship_and_ordering">**Relationships and Ordering**</a>
 
 By default, Puppet applies resources in the order they’re declared in their manifest. However, if a group of resources must always be managed in a specific order, you should explicitly declare such relationships with relationship metaparameters, chaining arrows, and the require function.
 
@@ -108,7 +108,7 @@ Now we have a task setting up 1 server in CentOS 6, with :
 + Install package *httpd*
 + Start service *httpd* 
 
-*On Puppet Master, create file */etc/puppet/manifests/sites.pp*
+*On Puppet Master, create file /etc/puppet/manifests/sites.pp*
 
 {% highlight erb %}
 
@@ -207,3 +207,5 @@ Hope you will love it.
 ---
 
 **Previous Topic** : <a href="/puppet/2016/02/04/puppet-automation-series-part-3-installation/">PUPPET AUTOMATION SERIES - PART 3 - INSTALLATION</a>
+
+**Next Topic** : <a href="/puppet/2016/02/15/puppet-automation-series-part-5-How-to-use-community-nginx-module/">PUPPET AUTOMATION SERIES - PART 5 - HOW TO USE COMMUNITY MODULE : NGINX</a>
