@@ -208,4 +208,4 @@ Hope you will love it.
 
 **Previous Topic** : <a href="/puppet/2016/02/04/puppet-automation-series-part-3-installation/">PUPPET AUTOMATION SERIES - PART 3 - INSTALLATION</a>
 
-**Next Topic** : <a href="/puppet/2016/02/15/puppet-automation-series-part-5-How-to-use-community-nginx-module/">PUPPET AUTOMATION SERIES - PART 5 - HOW TO USE COMMUNITY MODULE : NGINX</a>
+**Next Topic** : <a href="/puppet/2016/02/16/puppet-automation-series-part-5-How-to-use-community-nginx-module/">PUPPET AUTOMATION SERIES - PART 5 - HOW TO USE COMMUNITY MODULE : NGINX</a>

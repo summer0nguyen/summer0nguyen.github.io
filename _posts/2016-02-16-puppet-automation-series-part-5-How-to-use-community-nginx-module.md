@@ -110,7 +110,7 @@ node 'puppet-agent.summernguyen.net' {
 
 	#Create directory : /var/www/html
 	#See https://docs.puppetlabs.com/puppet/latest/reference/type.html#file for information
-	file{"/var/www/html":
+	file{["/var/www","/var/www/html"]:
 		ensure	=>	"directory",
 		owner	=>	"root",
 		mode	=>	"755"
@@ -218,3 +218,7 @@ Hope you will love this post.
 ---
 
 **Previous Topic** : <a href="/puppet/2016/02/15/puppet-automation-series-part-4-beginners-configuration-guide/">PUPPET AUTOMATION SERIES - PART 4 - BEGINNERS CONFIGURATION GUIDE</a>
+
+
+**Next Topic** : <a href="/puppet/2016/02/29/puppet-automation-series-part-6-trouble-shooting/">PUPPET AUTOMATION SERIES - PART 6 - TROUBLESHOOTING</a>
+
