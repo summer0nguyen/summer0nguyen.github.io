@@ -1,8 +1,10 @@
 #!/bin/bash
+#Author: Summer0nguyen
 
 cwd=`dirname $0`
 RESULT_PATH="$cwd/results"
 
+TOTAL_THREADS=8
 
 
 
@@ -83,18 +85,23 @@ function checkXML {
 
     urls=`curl -s $sitemap_url| sed -e 's/></>\'$'\n</g' | grep "<loc>"  | awk -F'>' '{print $2}' | awk -F'<' '{print $1}'`
 
+    N=$TOTAL_THREADS
+    (
     for url in $urls
     do
+        ((i=i%N)); ((i++==0)) && wait
+
         if [[ "$url" == *gz ]]
         then
-            checkXMLGZ $url
+            checkXMLGZ $url &
         elif [[ "$url" == *xml ]]
         then 
-            checkXML $url
+            checkXML $url &
         else
             echo "$url" >> $RESULT_PATH/$domain
         fi
     done
+    )
 
 
 }
@@ -109,19 +116,22 @@ function checkXMLGZ {
     urls=`curl -s $sitemap_url| gunzip -c| sed -e 's/></>\'$'\n</g' | grep "<loc>"  | awk -F'>' '{print $2}' | awk -F'<' '{print $1}'`
 
     
-
+    N=$TOTAL_THREADS
+    (
     for url in $urls
     do
+        ((i=i%N)); ((i++==0)) && wait
         if [[ "$url" == *gz ]]
         then
-            checkXMLGZ $url
+            checkXMLGZ $url &
         elif [[ "$url" == *xml ]]
         then 
-            checkXML $url
+            checkXML $url &
         else
             echo "$url" >> $RESULT_PATH/$domain
         fi
     done
+    )
 
 }
 
