@@ -54,7 +54,7 @@ function checkRobots {
     robot_url=$1
     echo "Check Robot: $robot_url"
 
-    sitemaps=`curl -s "$robot_url"| grep -i Sitemap | awk '{print $NF}'`
+    sitemaps=`curl --compressed -s "$robot_url"| grep -i Sitemap | awk '{print $NF}'`
 
 
 
@@ -83,7 +83,7 @@ function checkXML {
 
     echo "Checking XML: $sitemap_url"
 
-    urls=`curl -s "$sitemap_url"| sed -e 's/></>\'$'\n</g' | grep "<loc>"  | awk -F'>' '{print $2}' | awk -F'<' '{print $1}'`
+    urls=`curl --compressed -s "$sitemap_url"| sed -e 's/></>\'$'\n</g' | grep "<loc>"  | awk -F'>' '{print $2}' | awk -F'<' '{print $1}'`
     N=$TOTAL_THREADS
     (
     for url in $urls
@@ -112,7 +112,7 @@ function checkXMLGZ {
     echo "check XML Gzip : $sitemap_url" 
 
 
-    urls=`curl -s "$sitemap_url"| gunzip -c| sed -e 's/></>\'$'\n</g' | grep "<loc>"  | awk -F'>' '{print $2}' | awk -F'<' '{print $1}'`
+    urls=`curl --compressed -s "$sitemap_url"| gunzip -c| sed -e 's/></>\'$'\n</g' | grep "<loc>"  | awk -F'>' '{print $2}' | awk -F'<' '{print $1}'`
 
     
     N=$TOTAL_THREADS
