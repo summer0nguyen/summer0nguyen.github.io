@@ -54,7 +54,7 @@ function checkRobots {
     robot_url=$1
     echo "Check Robot: $robot_url"
 
-    sitemaps=`curl --compressed -s "$robot_url"| grep -i Sitemap | awk '{print $NF}'`
+    sitemaps=`curl -A 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0' --compressed -s "$robot_url"| grep -i Sitemap | awk '{print $NF}'`
 
 
 
@@ -67,6 +67,9 @@ function checkRobots {
         elif [[ "$sitemap" == *xml ]]
         then 
             checkXML $sitemap
+        elif [[ "$sitemap" == *sitemap* ]]
+        then
+            checkXML $sitemap &
         else
             echo "[Warning] Ignore File $sitemap"
         fi
@@ -83,7 +86,7 @@ function checkXML {
 
     echo "Checking XML: $sitemap_url"
 
-    urls=`curl --compressed -s "$sitemap_url"| sed -e 's/></>\'$'\n</g' | grep "<loc>"  | awk -F'>' '{print $2}' | awk -F'<' '{print $1}'`
+    urls=`curl -A 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0' --compressed -s "$sitemap_url"| sed -e 's/></>\'$'\n</g' | grep "<loc>"  | awk -F'>' '{print $2}' | awk -F'<' '{print $1}'`
     N=$TOTAL_THREADS
     (
     for url in $urls
@@ -95,6 +98,9 @@ function checkXML {
             checkXMLGZ $url &
         elif [[ "$url" == *xml ]]
         then 
+            checkXML $url &
+        elif [[ "$url" == *sitemap* ]]
+        then
             checkXML $url &
         else
             echo "$url" >> $RESULT_PATH/$domain
@@ -112,7 +118,7 @@ function checkXMLGZ {
     echo "check XML Gzip : $sitemap_url" 
 
 
-    urls=`curl --compressed -s "$sitemap_url"| gunzip -c| sed -e 's/></>\'$'\n</g' | grep "<loc>"  | awk -F'>' '{print $2}' | awk -F'<' '{print $1}'`
+    urls=`curl -A 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0' --compressed -s "$sitemap_url"| gunzip -c| sed -e 's/></>\'$'\n</g' | grep "<loc>"  | awk -F'>' '{print $2}' | awk -F'<' '{print $1}'`
 
     
     N=$TOTAL_THREADS
@@ -125,6 +131,9 @@ function checkXMLGZ {
             checkXMLGZ $url &
         elif [[ "$url" == *xml ]]
         then 
+            checkXML $url &
+        elif [[ "$url" == *sitemap* ]]
+        then
             checkXML $url &
         else
             echo "$url" >> $RESULT_PATH/$domain
@@ -143,8 +152,12 @@ websites=`cat $configFile`
 for website in $websites
 do
 
+    domain=`getDomain $website`
 
-    if [[ "$website" == *gz ]]
+    if [ -f $RESULT_PATH/$domain ]
+    then
+        echo "File $RESULT_PATH/$domain already exists"
+    elif [[ "$website" == *gz ]]
     then
         checkXMLGZ $website
     elif [[ "$website" == *xml ]]
