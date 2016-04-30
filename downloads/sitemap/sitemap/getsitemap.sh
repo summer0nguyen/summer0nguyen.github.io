@@ -118,7 +118,7 @@ function checkXMLGZ {
     echo "check XML Gzip : $sitemap_url" 
 
 
-    urls=`curl -A 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0' --compressed -s "$sitemap_url"| gunzip -c| sed -e 's/></>\'$'\n</g' | grep "<loc>"  | awk -F'>' '{print $2}' | awk -F'<' '{print $1}'`
+    urls=`curl -A 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0' -s "$sitemap_url"| gunzip -c| sed -e 's/></>\'$'\n</g' | grep "<loc>"  | awk -F'>' '{print $2}' | awk -F'<' '{print $1}'`
 
     
     N=$TOTAL_THREADS
