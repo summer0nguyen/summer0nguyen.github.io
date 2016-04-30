@@ -54,14 +54,14 @@ function checkRobots {
     robot_url=$1
     echo "Check Robot: $robot_url"
 
-    sitemaps=`curl -A 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0' --compressed -s "$robot_url"| grep -i Sitemap | awk '{print $NF}'`
+    sitemaps=`curl -L -A 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0' --compressed -s "$robot_url"| grep -i Sitemap | awk '{print $NF}'`
 
 
 
     for sitemap in $sitemaps
     do
 
-        if [[ "$sitemap" == *gz ]]
+        if [[ "$sitemap" == *.gz ]]
         then
             checkXMLGZ $sitemap
         elif [[ "$sitemap" == *xml ]]
@@ -86,14 +86,14 @@ function checkXML {
 
     echo "Checking XML: $sitemap_url"
 
-    urls=`curl -A 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0' --compressed -s "$sitemap_url"| sed -e 's/></>\'$'\n</g' | grep "<loc>"  | awk -F'>' '{print $2}' | awk -F'<' '{print $1}'`
+    urls=`curl -L -A 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0' --compressed -s "$sitemap_url"| sed -e 's/></>\'$'\n</g' | grep "<loc>"  | awk -F'>' '{print $2}' | awk -F'<' '{print $1}'`
     N=$TOTAL_THREADS
     (
     for url in $urls
     do
         ((i=i%N)); ((i++==0)) && wait
 
-        if [[ "$url" == *gz ]]
+        if [[ "$url" == *.gz ]]
         then
             checkXMLGZ $url &
         elif [[ "$url" == *xml ]]
@@ -118,7 +118,7 @@ function checkXMLGZ {
     echo "check XML Gzip : $sitemap_url" 
 
 
-    urls=`curl -A 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0' -s "$sitemap_url"| gunzip -c| sed -e 's/></>\'$'\n</g' | grep "<loc>"  | awk -F'>' '{print $2}' | awk -F'<' '{print $1}'`
+    urls=`curl -L -A 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:32.0) Gecko/20100101 Firefox/32.0' -s "$sitemap_url"| gunzip -c| sed -e 's/></>\'$'\n</g' | grep "<loc>"  | awk -F'>' '{print $2}' | awk -F'<' '{print $1}'`
 
     
     N=$TOTAL_THREADS
@@ -126,7 +126,7 @@ function checkXMLGZ {
     for url in $urls
     do
         ((i=i%N)); ((i++==0)) && wait
-        if [[ "$url" == *gz ]]
+        if [[ "$url" == *.gz ]]
         then
             checkXMLGZ $url &
         elif [[ "$url" == *xml ]]
